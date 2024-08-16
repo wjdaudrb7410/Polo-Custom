@@ -1,11 +1,13 @@
 import React from "react";
+import "./GlobalStyle.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 
 import reportWebVitals from "./reportWebVitals";
-import { App } from "./App";
+
 import { Router } from "./Router";
 import { HelmetProvider } from "react-helmet-async";
+import { Reset } from "styled-reset";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,6 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <HelmetProvider>
     <React.StrictMode>
+      <Reset></Reset>
       <Router></Router>
     </React.StrictMode>
   </HelmetProvider>
