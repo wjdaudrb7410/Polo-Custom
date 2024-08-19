@@ -1,36 +1,30 @@
 import { Container } from "react-bootstrap";
-import { CiSearch } from "react-icons/ci";
+import { CiSearch, CiUser } from "react-icons/ci";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import { CiMenuBurger } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { Paths } from "../routes";
+import { h_emoji_size } from "../Data/ScaleData";
 export const Header = () => {
   return (
-    <Container
-      style={{
-        backgroundColor: "#fff",
-        zIndex: "30",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        margin: "30px auto",
-      }}
-    >
-      <div style={{ fontSize: "24px", fontWeight: "400", letterSpacing: 2 }}>
-        <Link to={{ pathname: Paths.home }}>RALPH LAUREN</Link>
+    <Container className="Header_Container">
+      <div className="MainTitle">
+        <Link to={{ pathname: Paths.home }}>RALPHS LAURENS</Link>
       </div>
-      <div
-        style={{
-          width: "100px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <CiSearch size={24}></CiSearch>
-        <MdOutlineShoppingBag size={24}></MdOutlineShoppingBag>
+      <div className="Menu_Box">
+        <div>
+          <Link to={{ pathname: Paths.Man }}>MAN</Link>
+        </div>
+        <div>
+          <Link to={{ pathname: Paths.Woman }}>WOMAN</Link>
+        </div>
+      </div>
+
+      <div className="Icon_Box">
+        <CiSearch size={h_emoji_size}></CiSearch>
+        <MdOutlineShoppingBag size={h_emoji_size}></MdOutlineShoppingBag>
 
         <Link to={{ pathname: Paths.Login }}>
-          <CiMenuBurger size={24}></CiMenuBurger>
+          <CiUser size={h_emoji_size}></CiUser>
         </Link>
       </div>
     </Container>
